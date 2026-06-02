@@ -47,7 +47,7 @@ class BaseJointEmbeddingPredictiveArchitecture(
 
     @property
     def predictor(self) -> BasePredictor[TEncoding, TLatent]:
-        return self.predictor
+        return self._predictor
 
     @abstractmethod
     def _calculate_loss(
@@ -59,6 +59,10 @@ class BaseJointEmbeddingPredictiveArchitecture(
         prediction: TEncoding,
         target_encoding: TEncoding,
     ) -> TLoss:
+        pass
+
+    @abstractmethod
+    def _update_target_encoder_weights(self) -> None:
         pass
 
     @override
