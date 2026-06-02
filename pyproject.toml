@@ -41,3 +41,7 @@ train = [
     "hydra-joblib-launcher>=1.2.0",
     "omegaconf>=2.3.0",
 ]
+
+[tool.ty.src]
+include = [ "src", "tests" ]
+
