@@ -29,6 +29,7 @@ dev = [
     "marimo>=0.23.8",
     "pytest>=9.0.3",
     "ruff>=0.15.15",
+    "ty>=0.0.42",
 ]
 plot = [
     "matplotlib>=3.10.9",

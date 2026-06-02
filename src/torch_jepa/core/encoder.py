@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 from typing import Generic
 
 from torch_jepa._typing import TEncoding, TObservation
-from torch_jepa.utils.base.common import DimensionalModule
+from torch_jepa.core.struct import DimMixin
 
 
-class BaseEncoder(Generic[TObservation, TEncoding], DimensionalModule, ABC):
+class BaseEncoder(Generic[TObservation, TEncoding], DimMixin, ABC):
     """Base class for a JEPA encoder."""
 
     def __init__(self, dim: int) -> None:

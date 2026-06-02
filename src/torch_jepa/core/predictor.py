@@ -2,10 +2,10 @@ from abc import ABC, abstractmethod
 from typing import Generic
 
 from torch_jepa._typing import TEncoding, TLatent
-from torch_jepa.utils.base.common import DimensionalModule
+from torch_jepa.core.struct import DimMixin
 
 
-class BasePredictor(Generic[TEncoding, TLatent], DimensionalModule, ABC):
+class BasePredictor(Generic[TEncoding, TLatent], DimMixin, ABC):
     """Base class for a JEPA predictor."""
 
     def __init__(self, dim: int) -> None:
