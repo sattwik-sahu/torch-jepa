@@ -6,8 +6,8 @@ from tensordict import TensorClass
 from torch_jepa._typing import TEncoding, TLatent, TObservation
 
 
-class DimensionalModule(torch.nn.Module):
-    """Base class for a module with some dimensionality."""
+class DimMixin(torch.nn.Module):
+    """Mixin for a module with some dimensionality."""
 
     def __init__(self, dim: int) -> None:
         super().__init__()

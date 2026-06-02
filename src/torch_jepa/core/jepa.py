@@ -4,16 +4,16 @@ from typing import Generic, TypeVar
 from typing_extensions import override
 
 from torch_jepa._typing import TEncoding, TLatent, TObservation
-from torch_jepa.utils.base.common import BaseJEPALoss, DimensionalModule, JEPAOutput
-from torch_jepa.utils.base.encoder import BaseEncoder
-from torch_jepa.utils.base.predictor import BasePredictor
+from torch_jepa.core.encoder import BaseEncoder
+from torch_jepa.core.predictor import BasePredictor
+from torch_jepa.core.struct import BaseJEPALoss, DimMixin, JEPAOutput
 
 TLoss = TypeVar("TLoss", bound=BaseJEPALoss)
 
 
 class BaseJointEmbeddingPredictiveArchitecture(
     Generic[TObservation, TEncoding, TLatent, TLoss],
-    DimensionalModule,
+    DimMixin,
     ABC,
 ):
     """Base class for JEPA implementation."""
